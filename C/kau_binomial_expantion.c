@@ -1,17 +1,17 @@
-//Binomial expantion
+//To find Binomial expantion.
 #include<stdio.h>
 #include<math.h>
 int n;
-
+//To calculate factorial of given number.
 int fact(int a) {
   if (a == 0)
     return 1;
   else
     return(a * fact(a-1));
 }
-
+//To find the number of combinations possible. Mathematically written as C(n,r).
 int combi(int r) {
-  return fact(n)/(fact(r)*fact(n-r));
+  return fact(n)/(fact(r)*fact(n-r)); //Funtion call by itself (recursion).
 }
 
 void main() {
@@ -20,9 +20,9 @@ void main() {
   scanf("%d%d",&a,&b);
   printf("Enter the power of binomial expression\n");
   scanf("%d",&n);
-  printf("	y= ");
+  printf(" y= ");
   for(i=0,j=n;i<=n;i++,j--) {
-    constant= combi(i)* pow(a,j) * pow(b,i);
+    constant= combi(i)* pow(a,j) * pow(b,i);  //To find the constent of every term in the expansion.
     printf("+ ( %d (x^%d) (y^%d) ) ",constant, j, i);
   }
   printf("\n");
